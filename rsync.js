@@ -52,7 +52,7 @@ function Rsync(config) {
     }
 
     // executable
-    this._executable = hasOP(config, 'executable') ? config.executable : 'rsync';
+    this._executable = hasOP(config, 'executable') ? config.executable : 'ionice -c 3 rsync';
 
     // shell
     this._executableShell = hasOP(config, 'executableShell') ? config.executableShell : '/bin/sh';
